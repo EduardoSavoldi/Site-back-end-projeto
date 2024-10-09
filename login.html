@@ -14,18 +14,24 @@
         
         </div>
         <div class="right-login">
-            <div class="card-login">
+            <div class="card-login" id="card-login">
                 <h1>LOGIN</h1>
                 <div class="textfield">
                     <label form="usuario">Usuario</label>
-                    <input type="text" name="usuario" placeholder="Usuário" >
+                    <input type="text" id="textfield-usuario" name="usuario" placeholder="Usuário" >
                 </div>
                 <div class="textfield">
                     <label form="senha">Senha</label>
-                    <input type="text" name="senha" placeholder="Senha">
+                    <input style="display: flex;" type="password" id="textfield-senha" name="senha" placeholder="Senha">
+                    <!--MUDAR O INPUT DE MOSTRAR A SENHA-->
+                    <div style="display: flex; margin-top: 5px;">
+                        <input style="width: 20px; height: 20px;" type="checkbox" name="mostrar senha" id="mostrar-senha">
+                        <span style="color: #f0ffffde; margin-top: 1px; margin-left: 5px;">Mostrar senha</span>
+                    </div>
                 </div>
-                    <a href="#" class="btn-login">Login</a>
+                    <a href="#" class="btn-login" id="btn-login">Login</a>
             </div>
         </div>
+        <script src="login.js"></script>
 </body>
 </html>
