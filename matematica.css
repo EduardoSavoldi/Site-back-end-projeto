@@ -6,9 +6,6 @@ body{
     display: flex;
     justify-content: space-around;
 }
-.headerDiv{
-
-}
 
 .listaMaterias{
     display: flex;
