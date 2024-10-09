@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matemática</title>
     <link rel="stylesheet" href="matematica.css">
+    <link rel="stylesheet" href="comentariosAr/comentarios.css">
 </head>
 <body>
     <div class="bgCabecalho">
@@ -109,11 +110,14 @@
         </section>
     </div>
     <section class="perguntasSec">
-        <div class="teste">
-            <div class="teste2">
-                <h1>José</h1>
+        <div class="container">
+            <h1>Comentários</h1>
+            <div id="commentSection">
             </div>
+            <textarea id="newComment" placeholder="Adicione um comentário..."></textarea>
+            <button id="submitComment">Comentar</button>
         </div>
     </section>
+    <script src="comentariosAr/comentarios.js"></script>
 </body>
 </html>
