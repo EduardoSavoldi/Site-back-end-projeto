@@ -1,0 +1,71 @@
+body{
+    background-color: #f0f0f0;
+}
+
+.navegacaoClass{
+    display: flex;
+    justify-content: space-around;
+}
+
+.listaMaterias{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.bgCabecalho{
+    background-color: rgb(221, 221, 221);
+    padding: 0px 0px;
+    margin-left: -20px;
+    margin-top: -20px;
+    margin-right: -20px;
+    padding-bottom: 40px;
+}
+
+.cabeçalhoTexto{
+    display: flex;
+    justify-content: space-around;
+}
+
+.listaMat{
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.listaTexto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.listaTexto:hover{
+    filter: brightness(75%);
+}
+
+#imgss{
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.teste{
+    display: flex;
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: lightgray;
+    margin: 50px;
+}
+
+.teste2{
+    margin: 25px;
+    background-color: rgb(155, 155, 155);
+    height: 100px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 25px;
+}
