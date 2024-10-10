@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 60%;
     margin: auto;
     background: white;
     padding: 20px;
@@ -28,13 +28,14 @@ body {
 }
 
 textarea {
-    width: 96.5%;
+    max-width: 98%;
+    width: 98%;
     height: 50px;
     margin-top: 10px;
     border-radius: 5px;
     resize: none;
     border: none;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(245, 245, 245);
     padding: 10px;
 }
 
@@ -52,10 +53,5 @@ button {
 
 button:hover{
     background-color: rgb(211, 211, 211);
-}
-
-.likeBtn{
-    display: flex;
-    justify-content: space-between;
 }
 
