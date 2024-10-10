@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 60%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-wrap: break-word;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding-right: 15px;
+}
+
+.replySection {
+    margin-left: 20px;
+}
+
+textarea {
+    max-width: 98%;
+    width: 98%;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 5px;
+    resize: none;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    padding: 10px;
+}
+
+.replySection textarea{
+    width: 94%;
+}
+
+button {
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: none;
+    background-color: rgb(240, 240, 240);
+}
+
+button:hover{
+    background-color: rgb(211, 211, 211);
+}
+
