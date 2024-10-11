@@ -14,6 +14,7 @@ document.getElementById('submitComment').addEventListener('click', function() {
                 <p><span style="color: #587bd6""><strong>${usuarioNome}</strong></span><br><span style="color: #313131">${commentText}</span></p>
                 <div style="">
                     <button class="likeBtn">👍 0</button>
+                    <button class="dislikeBtn">👎 0</button>
                     <button class="replyBtn">Responder</button>
                 </div>
             </div>
@@ -25,11 +26,19 @@ document.getElementById('submitComment').addEventListener('click', function() {
 });
 
 document.getElementById('commentSection').addEventListener('click', function(event) {
-    if (event.target.classList.contains('likeBtn')) {
-        const likeBtn = event.target;
-        var count = parseInt(likeBtn.textContent.split(' ')[1]) + 1;
-        likeBtn.textContent = `👍 ${count}`;
-    } else if (event.target.classList.contains('replyBtn') || event.target.classList.contains('replyReplyBtn')) {
+    if (event.target.classList.contains('likeBtn') || event.target.classList.contains('dislikeBtn')) {
+        const btn = event.target;
+        var count = parseInt(btn.textContent.split(' ')[1]) + 1;
+
+        if (btn.classList.contains('likeBtn')){
+            btn.textContent = `👍 ${count}`;
+        }
+        else if (btn.classList.contains('dislikeBtn')){
+            btn.textContent = `👎 ${count}`;
+        }
+
+    }
+    else if (event.target.classList.contains('replyBtn') || event.target.classList.contains('replyReplyBtn')) {
         const replySection = event.target.closest('.comment').querySelector('.replySection');
         const replyInput = document.createElement('textarea');
         const replySubmit = document.createElement('button');
@@ -40,7 +49,6 @@ document.getElementById('commentSection').addEventListener('click', function(eve
         
         replySubmit.addEventListener('click', function() {
             const replyText = replyInput.value;
-            
             if (replyText) { 
                 const replyComment = document.createElement('div');
                 let commentNome;
@@ -60,6 +68,7 @@ document.getElementById('commentSection').addEventListener('click', function(eve
                         <p><span class="comment-nome" style="color: #587bd6"><strong>${usuarioNome}</strong></span><br>${marcadorUsuario}<span style="color: #313131">${replyText}</span></p>
                         <div style="">
                             <button class="likeBtn">👍 0</button>
+                            <button class="dislikeBtn">👎 0</button>
                             <button class="replyReplyBtn">Responder</button>
                         </div>
                     </div>
@@ -74,3 +83,10 @@ document.getElementById('commentSection').addEventListener('click', function(eve
     }
     
 });
+
+
+/*    if (event.target.classList.contains('likeBtn')) {
+        const likeBtn = event.target;
+        var count = parseInt(likeBtn.textContent.split(' ')[1]) + 1;
+        likeBtn.textContent = `👍 ${count}`;
+    } */
