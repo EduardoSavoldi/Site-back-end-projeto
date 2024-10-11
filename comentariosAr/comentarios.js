@@ -11,7 +11,7 @@ document.getElementById('submitComment').addEventListener('click', function() {
         newComment.classList.add('comment');
         newComment.innerHTML = `
             <div style="margin: auto; max-width: 90%; padding-bottom: 10px;">
-                <p><span style="color: #587bd6""><strong>${usuarioNome} </strong></span><br><span style="color: #313131">${commentText}</span></p>
+                <p><span style="color: #587bd6""><strong>${usuarioNome}</strong></span><br><span style="color: #313131">${commentText}</span></p>
                 <div style="">
                     <button class="likeBtn">👍 0</button>
                     <button class="replyBtn">Responder</button>
@@ -29,7 +29,7 @@ document.getElementById('commentSection').addEventListener('click', function(eve
         const likeBtn = event.target;
         var count = parseInt(likeBtn.textContent.split(' ')[1]) + 1;
         likeBtn.textContent = `👍 ${count}`;
-    } else if (event.target.classList.contains('replyBtn')) {
+    } else if (event.target.classList.contains('replyBtn') || event.target.classList.contains('replyReplyBtn')) {
         const replySection = event.target.closest('.comment').querySelector('.replySection');
         const replyInput = document.createElement('textarea');
         const replySubmit = document.createElement('button');
@@ -40,11 +40,24 @@ document.getElementById('commentSection').addEventListener('click', function(eve
         
         replySubmit.addEventListener('click', function() {
             const replyText = replyInput.value;
-            if (replyText) {
+            
+            if (replyText) { 
                 const replyComment = document.createElement('div');
+                let commentNome;
+                let marcadorUsuario;
+
+                if(event.target.classList.contains('replyBtn')){
+                    commentNome = ``;
+                    marcadorUsuario = ``;
+                }
+                else if(event.target.classList.contains('replyReplyBtn')){
+                    commentNome = event.target.parentElement.parentElement.querySelector('.comment-nome').textContent;
+                    marcadorUsuario = `<span style="color: #587bd6">@${commentNome} </span>`;
+                }
+
                 replyComment.innerHTML = `
                     <div style="margin-left: 7%">
-                        <p><span style="color: #587bd6"><strong>${usuarioNome} </strong><br></span><span style="color: #313131">${replyText}</span></p>
+                        <p><span class="comment-nome" style="color: #587bd6"><strong>${usuarioNome}</strong></span><br>${marcadorUsuario}<span style="color: #313131">${replyText}</span></p>
                         <div style="">
                             <button class="likeBtn">👍 0</button>
                             <button class="replyReplyBtn">Responder</button>
@@ -59,34 +72,5 @@ document.getElementById('commentSection').addEventListener('click', function(eve
 
         });
     }
-    if(event.target.classList.contains('replyReplyBtn')){
-        const replyReplySection = event.target.closest('.comment').querySelector('.replySection');
-        const replyReplyInput = document.createElement('textarea');
-        const replyReplySubmit = document.createElement('button');
-        replyReplySubmit.textContent = 'Responder';
-
-        replyReplySection.appendChild(replyReplyInput);
-        replyReplySection.appendChild(replyReplySubmit);
-
-        replyReplySubmit.addEventListener('click', function() {
-            const replyReplyText = replyReplyInput.value;
-            if (replyReplyText) {
-                const replyComment = document.createElement('div');
-                replyComment.innerHTML = `
-                    <div style="margin-left: 14%">
-                        <p><span style="color: #587bd6"><strong>${usuarioNome} </strong></span><br><span style="color: #313131">${replyReplyText}</span></p>
-                        <div style="">
-                            <button class="likeBtn">👍 0</button>
-                            <button class="replyReplyBtn">Responder</button>
-                        </div>
-                    </div>
-                    `;
-                replyReplySection.appendChild(replyComment);
-                replyReplyInput.value = '';
-                replyReplyInput.remove();
-                replyReplySubmit.remove();
-            }
-
-        });
-    }
+    
 });
