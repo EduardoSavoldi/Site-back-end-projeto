@@ -42,10 +42,18 @@ document.getElementById('commentSection').addEventListener('click', function(eve
         const replySection = event.target.closest('.comment').querySelector('.replySection');
         const replyInput = document.createElement('textarea');
         const replySubmit = document.createElement('button');
+        const replyCancel = document.createElement('button');
+        replyInput.classList.add('replycom');
+        replySubmit.classList.add('replycom');
+        replyCancel.classList.add('replycom');
+
+
         replySubmit.textContent = 'Responder';
+        replyCancel.textContent = 'Cancelar';
         
         replySection.appendChild(replyInput);
         replySection.appendChild(replySubmit);
+        replySection.appendChild(replyCancel);
         
         replySubmit.addEventListener('click', function() {
             const replyText = replyInput.value;
@@ -77,16 +85,33 @@ document.getElementById('commentSection').addEventListener('click', function(eve
                 replyInput.value = '';
                 replyInput.remove();
                 replySubmit.remove();
-            }
-
+                replyCancel.remove();
+            };
         });
+
+        function cancelCheck(){
+            replyInput.value = '';
+            replyInput.remove();
+            replySubmit.remove();
+            replyCancel.remove();
+        }
+
+        replyCancel.addEventListener('click', cancelCheck);
+        window.addEventListener('beforeunload', cancelCheck);
+
     }
     
 });
 
-
-/*    if (event.target.classList.contains('likeBtn')) {
-        const likeBtn = event.target;
-        var count = parseInt(likeBtn.textContent.split(' ')[1]) + 1;
-        likeBtn.textContent = `👍 ${count}`;
-    } */
+window.addEventListener('beforeunload', function(){
+    const comentarios = document.querySelectorAll('.comment')
+    let salvar = [];
+    const local = window.location.pathname;
+    var nomePag = local.split("/").pop().split('.').splice(0, 1);
+    
+    for(let i = 0; i < comentarios.length; i++){
+        salvar.push(`${comentarios[i].innerHTML}`)
+    };
+    
+    sessionStorage.setItem(`comentarios${nomePag}`, JSON.stringify(salvar));
+})
