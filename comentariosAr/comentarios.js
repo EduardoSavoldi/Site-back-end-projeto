@@ -28,14 +28,39 @@ document.getElementById('submitComment').addEventListener('click', function() {
 document.getElementById('commentSection').addEventListener('click', function(event) {
     if (event.target.classList.contains('likeBtn') || event.target.classList.contains('dislikeBtn')) {
         const btn = event.target;
-        var count = parseInt(btn.textContent.split(' ')[1]) + 1;
+        var count = parseInt(btn.textContent.split(' ')[1]);
 
         if (btn.classList.contains('likeBtn')){
-            btn.textContent = `👍 ${count}`;
+            if(!event.target.classList.contains('checked')){
+                btn.textContent = `👍 ${count += 1}`;
+                event.target.classList.add('checked');
+                if(event.target.parentElement.querySelector('.dislikeBtn').classList.contains('checked')){
+                    event.target.parentElement.querySelector('.dislikeBtn').textContent = `👎 ${count -= 1}`;
+                    event.target.parentElement.querySelector('.dislikeBtn').classList.remove('checked');
+                }
+            }
+            else if(event.target.classList.contains('checked')){
+                btn.textContent = `👍 ${count -= 1}`;
+                event.target.classList.remove('checked');
+            }
+
         }
         else if (btn.classList.contains('dislikeBtn')){
-            btn.textContent = `👎 ${count}`;
+            if(!event.target.classList.contains('checked')){
+                btn.textContent = `👎 ${count += 1}` ;
+                event.target.classList.add('checked');
+                if(event.target.parentElement.querySelector('.likeBtn').classList.contains('checked')){
+                    event.target.parentElement.querySelector('.likeBtn').textContent = `👍 ${count -= 1}`;
+                    event.target.parentElement.querySelector('.likeBtn').classList.remove('checked');
+                }
+            }
+            else if(event.target.classList.contains('checked')){
+                btn.textContent = `👎 ${count -= 1}` ;
+                event.target.classList.remove('checked');
+            }
+
         }
+
 
     }
     else if (event.target.classList.contains('replyBtn') || event.target.classList.contains('replyReplyBtn')) {
@@ -89,18 +114,22 @@ document.getElementById('commentSection').addEventListener('click', function(eve
             };
         });
 
-        function cancelCheck(){
+        replyCancel.addEventListener('click', function(){
             replyInput.value = '';
             replyInput.remove();
             replySubmit.remove();
             replyCancel.remove();
-        }
-
-        replyCancel.addEventListener('click', cancelCheck);
-        window.addEventListener('beforeunload', cancelCheck);
+        });
 
     }
     
+});
+
+window.addEventListener('beforeunload', function(){
+    let btn = document.querySelectorAll('.replycom');
+    for(let i = 0; i < btn.length; i++){
+        btn[i].remove();
+    }
 });
 
 window.addEventListener('beforeunload', function(){
@@ -115,3 +144,4 @@ window.addEventListener('beforeunload', function(){
     
     sessionStorage.setItem(`comentarios${nomePag}`, JSON.stringify(salvar));
 })
+
