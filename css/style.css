@@ -1,7 +1,6 @@
 body{
-    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background:rgb(12, 13, 29);
     margin: 0;
 
 }
@@ -10,21 +9,32 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: rgb(7, 7, 14);
+    color: rgb(194, 194, 194);
+}
+
+.navegacaoClass img:hover{
+    filter: brightness(80%);
 }
 
 .listaMaterias{
     display: flex;
     justify-content: space-between;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .bgCabecalho{
-    background-color: rgb(221, 221, 221);
-    padding: 0px 0px;
-    margin: -8px;
-    padding-bottom: 40px;
-    width: calc(100% + 16px);
+    align-items: center;
+    position: sticky;
+    top: 20px;
+    background-color: rgb(9, 9, 18);
+    padding-top: 20px;
+    padding-bottom: 30px;
+    width: 95%;
+    margin-top: 15px;
+    margin-left: 2.5%;
+    border-radius: 10px;
 }
 
 .cabeçalhoTexto{
@@ -45,6 +55,7 @@ body{
     color: black;
     font-size: 15px;
     font-weight: bold;
+    color: rgb(194, 194, 194);
 }
 
 .listaTexto:hover{
@@ -69,6 +80,7 @@ body{
     font-size: 80px;
     margin-top: -100px;
     letter-spacing: 10px;
+    color: rgb(194, 194, 194);
 }
 
 .textoCapa2{
@@ -85,6 +97,7 @@ body{
     right: 20px;
     height: 600px;
     transform: scaleX(-1);
+    filter: brightness(80%);
     margin-top: -220px;
     z-index: -1;
 }

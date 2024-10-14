@@ -1,28 +1,39 @@
 body{
-    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    background:rgb(12, 13, 29);
+    margin: 0px;
 }
 
 .navegacaoClass{
     display: flex;
     justify-content: space-around;
-    background-color: rgb(199, 199, 199);
+    align-items: center;
+    background-color: rgb(7, 7, 14);
+    color: rgb(194, 194, 194);
+}
+
+.navegacaoClass img:hover{
+    filter: brightness(80%);
 }
 
 .listaMaterias{
-    margin-top: 10px;
     display: flex;
     justify-content: space-between;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .bgCabecalho{
-    background-color: rgb(221, 221, 221);
-    padding: 0px 0px;
-    margin-left: -20px;
-    margin-top: -20px;
-    margin-right: -20px;
-    padding-bottom: 20px;
+    align-items: center;
+    position: sticky;
+    top: 20px;
+    background-color: rgb(9, 9, 18);
+    padding-top: 20px;
+    padding-bottom: 30px;
+    width: 95%;
+    margin-top: 15px;
+    margin-left: 2.5%;
+    border-radius: 10px;
 }
 
 .cabeçalhoTexto{
@@ -43,6 +54,7 @@ body{
     color: black;
     font-size: 15px;
     font-weight: bold;
+    color: rgb(194, 194, 194);
 }
 
 .listaTexto:hover{

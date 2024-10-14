@@ -24,7 +24,7 @@ body{
 
 .left-login > h1{
     font-size: 2.8vw;
-    color: #587bd6; 
+    color: rgb(88, 123, 214); 
 }
 
 img{
@@ -93,6 +93,10 @@ a{
     color: #f0ffff94;
 }
 
+.textfield div input{
+    cursor: pointer;
+}
+
 .btn-login{
     width: 100%;
     padding: 16px 0px;
@@ -111,3 +115,6 @@ a{
     text-decoration: none;
 
 }
+
+
+
