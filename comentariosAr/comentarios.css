@@ -66,8 +66,12 @@ button img{
 }
 
 button:hover{
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(178, 199, 255);
     cursor: pointer;
+}
+
+.checked{
+    background-color: rgb(178, 199, 255);
 }
 
 .div-btn-reply{
