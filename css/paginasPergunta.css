@@ -5,11 +5,20 @@ body{
 }
 
 .navegacaoClass{
-    display: flex;
-    justify-content: space-around;
     align-items: center;
     background-color: rgb(7, 7, 14);
     color: rgb(194, 194, 194);
+    font-weight: bolder;
+}
+
+.navegacaoClass div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-left: 45%;
+    padding: 10px 0;
+
 }
 
 .navegacaoClass img:hover{
