@@ -101,12 +101,12 @@ a{
     display: flex;
     flex-direction: column;
     width: 90%;
+    gap: 12px;
 }
 
 .btn-login{
     width: 100%;
     padding: 16px 0px;
-    margin: 25px;
     margin-bottom: 0px;
     border: none;
     border-radius: 10px;
@@ -120,7 +120,15 @@ a{
     box-shadow: 0px 10px 40px -12px #051a5c56;
     font-size: medium;
     text-decoration: none;
+}
 
+.cad-ref{
+    text-decoration: none; 
+    color: #f0ffffde;
+}
+
+.cad-ref:hover{
+    filter: brightness(75%);
 }
 
 
