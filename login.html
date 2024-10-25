@@ -9,27 +9,39 @@
 <body>
     <div class="main-login">
         <div class="left-login">
-            <h1>  Faça Login<br>Dúvidas? Aqui é o lugar!</h1>
+            <h1>Faça Login<br>Dúvidas? Aqui é o lugar!</h1>
             <img src="imagens/AAA.svg" alt="studan">
         
         </div>
         <div class="right-login">
             <div class="card-login" id="card-login">
                 <h1>LOGIN</h1>
-                <div class="textfield">
-                    <label form="usuario">Usuario</label>
-                    <input type="text" id="textfield-usuario" name="usuario" placeholder="Usuário" >
-                </div>
-                <div class="textfield">
-                    <label form="senha">Senha</label>
-                    <input style="display: flex;" type="password" id="textfield-senha" name="senha" placeholder="Senha">
-                    <!--MUDAR O INPUT DE MOSTRAR A SENHA-->
-                    <div style="display: flex; margin-top: 5px;">
-                        <input style="width: 20px; height: 20px;" type="checkbox" name="mostrar senha" id="mostrar-senha">
-                        <span style="color: #f0ffffde; margin-top: 1px; margin-left: 5px;">Mostrar senha</span>
+                <form id="formulario">
+                    <div class="textfield">
+                        <label form="usuario">Email</label>
+                        <input type="email" id="textfield-usuario" name="email" placeholder="Email" required>
                     </div>
+                    <div class="textfield">
+                        <label form="senha">Senha</label>
+                        <input style="display: flex;" type="password" id="textfield-senha" name="senha" placeholder="Senha" required>
+                        <div style="display: flex; padding: 15px 0; justify-content: space-between; width: 100%">
+                            <div style="display: flex; align-items: center;">
+                                <input style="width: 20px; height: 20px;" type="checkbox" name="mostrar senha" id="mostrar-senha">
+                                <span style="color: #f0ffffde; margin-top: 1px; margin-left: 5px;">Mostrar senha</span>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <a href="registro.html" class="cad-ref">Cadastre-se!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <button class="btn-login" id="btn-login">Login</button>
+                    </div>
+                </form>
+                <div class="btns">
+                    <a href="index.html" class="btn-login btn-naologin">Continuar sem fazer login</a>
                 </div>
-                    <a href="#" class="btn-login" id="btn-login">Login</a>
+
             </div>
         </div>
         <script src="script/login.js"></script>
